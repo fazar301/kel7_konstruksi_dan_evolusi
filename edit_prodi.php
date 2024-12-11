@@ -41,27 +41,7 @@
         </form>
 
         <?php 
-            if(isset($_POST['submit'])){
-                include('koneksi.php');
-                
-                $id = $_POST['id'];
-                $nama_prodi = $_POST['nama_prodi'];
-                $jenjang = $_POST['jenjang'];
-                $ket = $_POST['ket'];
-
-
-                $update = mysqli_query($db,"UPDATE prodi SET 
-                    nama_prodi='$nama_prodi',
-                    jenjang_studi='$jenjang',
-                    keterangan='$ket'
-                    WHERE id='$id'");
-                if($update){
-                    echo("<script>window.location='index.php?p=prodi'</script>");
-                }else {
-                    echo "Error: " . mysqli_error($db);
-                }
-
-            }
+            
         ?>
 
     </div>

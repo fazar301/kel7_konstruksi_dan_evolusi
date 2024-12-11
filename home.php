@@ -1,1 +1,1 @@
-<h1>Home</h1>
+<h1 class="h2">Dashboard</h1>
