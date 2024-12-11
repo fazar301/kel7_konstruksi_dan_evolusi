@@ -10,6 +10,7 @@
         
         if($user){
             $_SESSION['nama'] = $user['full_name'];
+            $_SESSION['id'] = $user['id'];
             header('location:admin/index.php');
         }
     }
