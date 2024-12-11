@@ -272,6 +272,12 @@
                           Kategori
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link d-flex align-items-center gap-2" href="index.php?p=berita">
+                      <i class="bi bi-newspaper"></i>
+                          Berita
+                      </a>
+                    </li>
                 </ul>
 
                 <hr class="my-3">
@@ -303,6 +309,7 @@
                         if($page == 'mhs') include('mahasiswa.php');
                         if($page == 'prodi') include('prodi.php');
                         if($page == 'kategori') include('kategori.php');
+                        if($page == 'berita') include('berita.php');
                         // if($page == 'prodi') include('list_prodi.php');
                         // if($page == 'tambah_mhs') include('mahasiswa.php');
                         // if($page == 'edit_mhs') include('edit_mahasiswa.php');
