@@ -12,11 +12,11 @@
             <thead>
 
                 <tr>
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Judul</th>
-                    <th>Gambar</th>
-                    <th>kategori</th>
-                    <th>Berita</th>
+                    <th>Kategori</th>
+                    <th>User</th>
+                    <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -31,9 +31,9 @@
             <tr>
                 <td><?= $no ?></td>
                 <td><?= $arrData['judul_berita'] ?></td>
-                <td><img src="img/<?= $arrData['file_upload'] ?>" alt="" width="150"></td>
                 <td><?= $arrData['nama_kategori'] ?></td>
-                <td><?= $arrData['isi_berita'] ?></td>
+                <td><?= $_SESSION['nama'] ?></td>
+                <td><?= date('D d M Y',strtotime($arrData['date_created'])) ?></td>
                 <td>
                     <a href="?p=berita&aksi=edit&id=<?= $arrData['berita_id'] ?>" class="btn btn-warning"><bi class="bi-pencil-square me-2"></bi>edit</a>
                     <a href="proses_berita.php?proses=delete&id=<?= $arrData['berita_id'] ?>" class="btn btn-danger"  onclick="return confirm('yakin ingin menghapus data?')"><i class="bi bi-trash-fill me-2"></i>hapus</a>
@@ -74,12 +74,12 @@
             </div>
             <div class="mb-3 pb-3">
                 <label for="gambar" class="form-label">Gambar</label>
-                <input type="file" name="gambar" class="form-control" id="gambar" accept="image/jpg,image/png,image/jpeg,image/gif" required autofocus>
+                <img src="#" alt="Preview Uploaded Image" id="file-preview" class="d-block d-none" width="180" alt="">
+                <input type="file" name="gambar" class="form-control" id="file-upload" accept="image/*"  required autofocus>
             </div>
             <div class="mb-3 pb-3">
                 <label for="berita" class="form-label">Berita</label>
                 <textarea class="form-control" id="berita" name="berita" rows="10"  required></textarea>
-                
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
             <button type="reset" class="btn btn-warning">Reset</button>
@@ -120,9 +120,9 @@
             </div>
             <div class="mb-3 pb-3">
                 <label for="gambar" class="form-label">Gambar</label>
-                <img src="img/<?= $berita['file_upload'] ?>" class="d-block" width="180" alt="">
+                <img src="img/<?= $berita['file_upload'] ?>" id="file-preview" class="d-block" width="180" alt="">
                 <p><?= $berita['file_upload'] ?></p>
-                <input type="file" name="gambar" class="form-control" id="gambar" accept="image/jpg,image/png,image/jpeg,image/gif" autofocus>
+                <input type="file" name="gambar" class="form-control" id="file-upload" accept="image/jpg,image/png,image/jpeg,image/gif" autofocus>
                 <input class="form-control" type="hidden" name="gambar_lama" value="<?= $berita['file_upload'] ?>">
             </div>
             <div class="mb-3 pb-3">
@@ -140,3 +140,21 @@
         break;
     }
 ?>
+
+
+<script>
+    const input = document.getElementById('file-upload');
+    const previewPhoto = () => {
+        const file = input.files;
+        if (file) {
+            const fileReader = new FileReader();
+            const preview = document.getElementById('file-preview');
+            preview.classList.remove('d-none');
+            fileReader.onload = function (event) {
+                preview.setAttribute('src', event.target.result);
+            }
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+    input.addEventListener("change", previewPhoto);
+</script>

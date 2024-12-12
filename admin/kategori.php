@@ -10,7 +10,7 @@
                 <thead>
 
                     <tr>
-                        <th>ID</th>
+                        <th>No</th>
                         <th>Nama Kategori</th>
                         <th>Aksi</th>
                     </tr>
@@ -24,7 +24,7 @@
                     while($kategori = mysqli_fetch_array($getData)){
                         ?>
                     <tr>
-                        <td><?= $kategori['id'] ?></td>
+                        <td><?= $no ?></td>
                         <td><?= $kategori['nama_kategori'] ?></td>
                         <td>
                             <a href="index.php?p=kategori&aksi=edit&id=<?= $kategori['id'] ?>" class="btn btn-warning"><bi class="bi-pencil-square me-2"></bi>edit</a>

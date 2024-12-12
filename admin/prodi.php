@@ -10,7 +10,7 @@
                 <thead>
 
                     <tr>
-                        <th>ID</th>
+                        <th>No</th>
                         <th>Nama Prodi</th>
                         <th>Jenjang</th>
                         <th>Keterangan</th>
@@ -26,7 +26,7 @@
                     while($prodi = mysqli_fetch_array($getData)){
                         ?>
                     <tr>
-                        <td><?= $prodi['id'] ?></td>
+                        <td><?= $no ?></td>
                         <td><?= $prodi['nama_prodi'] ?></td>
                         <td><?= $prodi['jenjang_studi'] ?></td>
                         <td><?= $prodi['keterangan'] ?></td>
