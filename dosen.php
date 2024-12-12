@@ -6,7 +6,7 @@
         case 'list':
 ?>
 
-        <h1 class="h2 border-bottom pb-3">Mahasiswa</h1>
+        <h1 class="h2 border-bottom pb-3">Dosen</h1>
         <a href="?p=mhs&aksi=input" class="btn btn-primary mb-5"><i class="bi bi-plus-circle me-2"></i>Tambah Data</a>
         <table id="example" class="table table-bordered table-striped">
             <thead>
