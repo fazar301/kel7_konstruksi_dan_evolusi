@@ -37,49 +37,39 @@
 
         }
     }
-    if($_GET['proses'] == 'delete'){
-        
-        $hapus = mysqli_query($db, "DELETE FROM mahasiswa WHERE nim = $_GET[nim]");
-
-        if($hapus){
-            header("location:index.php?p=mhs");
-        }
-    }
     if($_GET['proses'] == 'update'){
         if(isset($_POST['submit'])){
             
-            $nama = $_POST['nama'];
-            $nim = $_POST['nim'];
-            $jk = $_POST['jk'];
-            $prodi = $_POST['prodi'];
-            $hobis = $_POST['hobi'];
-            $alamat = $_POST['alamat'];
-            $email = $_POST['email'];
-            $tgl = $_POST['tgl'];
-            $bln = $_POST['bln'];
-            $thn = $_POST['thn'];
+            $userId = $_SESSION['id'];
+            $id = $_POST['id'];
+            $judul = $_POST['judul'];
+            $kategori = $_POST['kategori'];
+            $berita = $_POST['berita'];
+            $gambar = upload();
+            if(!$gambar){
+                $gambar = $_POST['gambar_lama'];
+            }    
 
-            $JenisKelamin = $jk == 'L' ? 'Laki-Laki' : 'Perempuan';
-            $jurusan;
-
-            $tgl_lhr = $thn . '-' . $bln . '-' . $tgl;
-            $hobby = implode(',', $hobis);
-
-
-            $update = mysqli_query($db,"UPDATE mahasiswa SET 
-                nama='$nama',
-                tgl_lahir='$tgl_lhr',
-                jk='$jk',
-                email='$email',
-                alamat='$alamat',
-                prodi_id='$prodi',
-                hobi='$hobby'
-                WHERE nim='$nim'");
+            $update = mysqli_query($db,"UPDATE berita SET 
+                user_id = $userId,
+                judul_berita = '$judul',
+                kategori_id = $kategori,
+                isi_berita = '$berita',
+                file_upload = '$gambar'
+                WHERE id = $id");
             if($update){
-                echo("<script>window.location='index.php?p=mhs'</script>");
+                echo("<script>window.location='index.php?p=berita'</script>");
             }else {
                 echo "Error: " . mysqli_error($db);
             }
 
+        }
+    }
+    if($_GET['proses'] == 'delete'){
+        
+        $hapus = mysqli_query($db, "DELETE FROM berita WHERE id = $_GET[id]");
+
+        if($hapus){
+            header("location:index.php?p=berita");
         }
     }
