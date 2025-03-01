@@ -59,6 +59,7 @@
                             <option value="d2">D2</option>
                             <option value="d3">D3</option>
                             <option value="d4">D4</option>
+							<option value="s1">S1</option>
                             <option value="s2">S2</option>
                         </select>
                     </div>
@@ -106,6 +107,7 @@
                             <option value="d2" <?= $prodi['jenjang_studi'] == 'd2' ? 'selected' : '' ?>>D2</option>
                             <option value="d3" <?= $prodi['jenjang_studi'] == 'd3' ? 'selected' : '' ?>>D3</option>
                             <option value="d4" <?= $prodi['jenjang_studi'] == 'd4' ? 'selected' : '' ?>>D4</option>
+                            <option value="s1" <?= $prodi['jenjang_studi'] == 's1' ? 'selected' : '' ?>>S1</option>
                             <option value="s2" <?= $prodi['jenjang_studi'] == 's2' ? 'selected' : '' ?>>S2</option>
                         </select>
                     </div>
