@@ -121,8 +121,9 @@
             <div class="mb-3 pb-3">
                 <label for="hobi" class="form-label">Hobi</label><br>
                 <input type="checkbox" name="hobi[]" id="coding" value="coding" class="me-2 form-check-input"><label for="coding" class="me-3">Coding</label>
-                <input type="checkbox" name="hobi[]" id="game" value="game" class="me-2 form-check-input"><label for="game" class="me-3">Bermain Game</label>
-                <input type="checkbox" name="hobi[]" id="memancing" class="me-2 form-check-input"value="memancing"><label for="memancing" class="me-3">Memancing</label>
+                <input type="checkbox" name="hobi[]" id="game" value="game" class="me-2 form-check-input"><label for="game" class="me-3">Bermain Game</label><br>
+                <input type="checkbox" name="hobi[]" id="memancing" class="me-2 form-check-input" value="memancing"><label for="memancing" class="me-3">Memancing</label>
+                <input type="checkbox" name="hobi[]" id="membaca" class="me-2 form-check-input" value="membaca"><label for="membaca" class="me-3">Membaca</label>
             </div>
             <div class="mb-3 pb-3">
                 <label for="alamat" class="form-label">Alamat</label>
@@ -223,8 +224,9 @@
             <div class="mb-3 pb-3">
                 <label for="hobi" class="form-label">Hobi</label><br>
                 <input type="checkbox" name="hobi[]" id="coding" value="coding" class="me-2 form-check-input" <?php if(in_array("coding",$hobies)) echo "checked" ?>><label for="coding" class="me-3">Coding</label>
-                <input type="checkbox" name="hobi[]" id="game" value="game" class="me-2 form-check-input" <?php if(in_array("game",$hobies)) echo "checked" ?>><label for="game" class="me-3">Bermain Game</label>
+                <input type="checkbox" name="hobi[]" id="game" value="game" class="me-2 form-check-input" <?php if(in_array("game",$hobies)) echo "checked" ?>><label for="game" class="me-3">Bermain Game</label><br>
                 <input type="checkbox" name="hobi[]" id="memancing" class="me-2 form-check-input" value="memancing" <?php if(in_array("memancing",$hobies)) echo "checked" ?>><label for="memancing" class="me-3">Memancing</label>
+                <input type="checkbox" name="hobi[]" id="membaca" class="me-2 form-check-input"value="membaca" <?php if(in_array("membaca",$hobies)) echo "checked" ?>><label for="membaca" class="me-3">Membaca</label>
             </div>
             <div class="mb-3 pb-3">
                 <label for="alamat" class="form-label">Alamat</label>
